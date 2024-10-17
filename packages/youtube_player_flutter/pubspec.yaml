@@ -6,7 +6,7 @@ homepage: https://github.com/sarbagyastha/youtube_player_flutter/tree/main/packa
 
 environment:
   sdk: ^3.4.3
-  flutter: '>=3.24.0'
+  flutter: '>=3.22.2'
 
 dependencies:
   flutter:
