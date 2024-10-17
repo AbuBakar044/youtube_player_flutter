@@ -397,7 +397,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
             ),
           ],
           if (!controller.flags.hideControls)
-             Center(child: playPauseWidget ?? PlayPauseButton())
+             Center(child: playPauseWidget ?? PlayPauseButton()),
           
             
           if (controller.value.hasError) errorWidget,
