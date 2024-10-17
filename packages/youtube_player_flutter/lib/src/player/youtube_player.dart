@@ -53,6 +53,7 @@ class YoutubePlayer extends StatefulWidget {
     this.onEnded,
     this.liveUIColor = Colors.red,
     this.topActions,
+    this.playPauseWidget,
     this.bottomActions,
     this.actionsPadding = const EdgeInsets.all(8.0),
     this.thumbnail,
@@ -69,6 +70,7 @@ class YoutubePlayer extends StatefulWidget {
   /// Default is devices's width.
   /// {@endtemplate}
   final double? width;
+  final Widget? playPauseWidget;
 
   /// {@template youtube_player_flutter.aspectRatio}
   /// Defines the aspect ratio to be assigned to the player. This property along with [width] calculates the player size.
@@ -394,8 +396,10 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
               ),
             ),
           ],
-          if (!controller.flags.hideControls)
-            const Center(child: PlayPauseButton()),
+          if (!controller.flags.hideControls){
+             Center(child: playPauseWidget ?? PlayPauseButton());
+          }
+            
           if (controller.value.hasError) errorWidget,
         ],
       ),
